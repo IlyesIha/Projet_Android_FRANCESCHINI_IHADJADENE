@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="button_current">Current Location</string>
+    <string name="button_select_city">Select Your city</string>
+    <string name="tv_autor">by Joffrey and Ilyes</string>
+    <string name="alert_message">Where do you want to know the weather</string>
+    <string name="alert_title">Select your city</string>
+    <string name="alert_validate">Validate</string>
+    <string name="alert_cancel">Cancel</string>
+    <string name="item_current">Current Location</string>
+    <string name="item_search">Find a city</string>
+
+    <string name="toast_ok">You are at : </string>
+    <string name="toast_error">Localisation not found</string>
+
+
+</resources>

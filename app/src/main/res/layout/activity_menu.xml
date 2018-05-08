@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/night"
+    tools:context="com.example.joffrey.weatherapp.Menu">
+
+
+    <TextView
+        android:id="@+id/tv_autor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:text= "@string/tv_autor"/>
+
+    <Button
+        android:id="@+id/button_current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="117dp"
+        android:text="@string/button_current"
+        style="@style/Widget.AppCompat.Button.Colored"/>
+
+    <Button
+        android:id="@+id/button_select_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/button_select_city"
+        style="@style/Widget.AppCompat.Button.Colored"/>
+
+</RelativeLayout>

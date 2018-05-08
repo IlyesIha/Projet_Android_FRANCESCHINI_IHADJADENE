@@ -7,6 +7,7 @@
     tools:context="com.example.joffrey.weatherapp.Menu">
 
 
+
     <TextView
         android:id="@+id/tv_autor"
         android:layout_width="wrap_content"
@@ -23,7 +24,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="117dp"
         android:text="@string/button_current"
-        style="@style/Widget.AppCompat.Button.Colored"/>
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:textSize="20dp"/>
 
     <Button
         android:id="@+id/button_select_city"
@@ -32,6 +34,9 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="@string/button_select_city"
+        android:textSize="20dp"
         style="@style/Widget.AppCompat.Button.Colored"/>
+
+
 
 </RelativeLayout>

@@ -27,7 +27,6 @@ public class Menu extends AppCompatActivity {
 
     private static final int MY_PERMISSIONS_REQUEST_LOCATION = 1;
     private FusedLocationProviderClient mFusedLocationClient;
-    //private String city;
     private com.example.joffrey.weatherapp.Location myLocation = new com.example.joffrey.weatherapp.Location();
 
     @Override

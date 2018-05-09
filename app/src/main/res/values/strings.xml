@@ -9,9 +9,8 @@
     <string name="alert_cancel">Cancel</string>
     <string name="item_current">Current Location</string>
     <string name="item_search">Find a city</string>
-
-    <string name="toast_ok">You are at : </string>
+    <string name="toast_valide">You are at : </string>
     <string name="toast_error">Localisation not found</string>
-
-
+    <string name="notif_title">LOCALISATION EROR</string>
+    <string name="notif_text">You need to turn on localisation</string>
 </resources>

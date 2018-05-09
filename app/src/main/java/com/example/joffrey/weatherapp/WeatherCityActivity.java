@@ -1,5 +1,6 @@
 package com.example.joffrey.weatherapp;
 
+import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -8,6 +9,7 @@ import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.location.*;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AlertDialog;
@@ -64,6 +66,15 @@ public class WeatherCityActivity extends AppCompatActivity {
         IntentFilter intentFilter = new IntentFilter(WEATHER_UPDATE);
         LocalBroadcastManager.getInstance(this).registerReceiver(new WeatherUpdate(), intentFilter);
 
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
+        mBuilder.setSmallIcon(android.R.drawable.ic_dialog_info);
+        mBuilder.setContentTitle("Localisation");
+        mBuilder.setContentText("Vous avez demandez la météo à " + myLocation.getCity());
+        mBuilder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(1, mBuilder.build());
+
 
     }
 
@@ -84,7 +95,7 @@ public class WeatherCityActivity extends AppCompatActivity {
                         if(location != null){
                             myLocation.setLatitude(location.getLatitude());
                             myLocation.setLongitude(location.getLongitude());
-                            Toast.makeText(getApplicationContext(), R.string.toast_ok + myLocation.getLatitude() + " " +  myLocation.getLongitude(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Vous êtes à : " + myLocation.getLatitude() + " " +  myLocation.getLongitude(), Toast.LENGTH_LONG).show();
                             Intent i = new Intent(WeatherCityActivity.this, WeatherCurrentActivity.class);
                             startActivity(i);
                         } else {
@@ -103,7 +114,6 @@ public class WeatherCityActivity extends AppCompatActivity {
                 builder.setPositiveButton(R.string.alert_validate, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        //city = input.getText().toString();
                         myLocation.setCity(input.getText().toString());
                         Toast.makeText(getApplicationContext(), myLocation.getCity(), Toast.LENGTH_LONG).show();
                         Intent j = new Intent(WeatherCityActivity.this, WeatherCityActivity.class);

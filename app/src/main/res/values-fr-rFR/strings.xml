@@ -10,7 +10,8 @@
     <string name="alert_cancel">Retour</string>
     <string name="item_current">Lieu actuel</string>
     <string name="item_search">Rechercher une ville</string>
-
-    <string name="toast_ok">Vous êtes à : </string>
+    <string name="toast_valide">Vous êtes à : </string>
     <string name="toast_error">Localisation non trouvée</string>
+    <string name="notif_title">ERREUR LOCALISATION</string>
+    <string name="notif_text">Vous devez activez la localisation pour cette application</string>
 </resources>

@@ -49,7 +49,7 @@ public class GetWeatherCityServices extends IntentService {
         URL url = null;
 
         try {
-            url = new URL("http://api.openweathermap.org/data/2.5/forecast?lang=fr&units=metric&APPID=b5fe018318b91102e114c2e5db8138d8&lat=" + Location.getCity());
+            url = new URL("http://api.openweathermap.org/data/2.5/forecast?lang=fr&units=metric&APPID=b5fe018318b91102e114c2e5db8138d8&q=" + Location.getCity());
             Log.i(TAG, "URL : " + url);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");

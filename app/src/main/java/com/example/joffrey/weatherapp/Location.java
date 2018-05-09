@@ -7,6 +7,15 @@ package com.example.joffrey.weatherapp;
 public class Location {
 
     private static String  latitude, longitude, city;
+    private static Double latitudeD, longitudeD;
+
+    public static Double getLatitudeDouble(){
+        return latitudeD;
+    }
+
+    public static Double getLongitudeDouble(){
+        return longitudeD;
+    }
 
     public static String getCity(){
         return city;
@@ -22,10 +31,12 @@ public class Location {
 
     public static void setLatitude(double lat){
         latitude = Double.toString(lat);
+        latitudeD = lat;
     }
 
     public static void setLongitude(double lon){
         longitude = Double.toString(lon);
+        longitudeD = lon;
     }
 
     public static void setCity (String name) {

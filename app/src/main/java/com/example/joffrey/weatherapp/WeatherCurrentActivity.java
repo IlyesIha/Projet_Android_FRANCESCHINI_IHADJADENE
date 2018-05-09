@@ -23,6 +23,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 import org.json.JSONArray;
@@ -33,6 +34,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
+import java.util.Locale;
 
 public class WeatherCurrentActivity extends AppCompatActivity {
 
@@ -47,6 +50,19 @@ public class WeatherCurrentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather_current);
+
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+
+        Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+        try {
+            List<Address> addresses = geocoder.getFromLocation(myLocation.getLatitudeDouble(),myLocation.getLongitudeDouble(),1);
+            String adresse = addresses.get(0).getAddressLine(0);
+            String[] arrayAdresse = adresse.split(",");
+            myLocation.setCity(arrayAdresse[1] + " |" + arrayAdresse[2]);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
         recyclerView = findViewById(R.id.rv_current);
 
@@ -137,7 +153,7 @@ public class WeatherCurrentActivity extends AppCompatActivity {
     public JSONArray getCurrentWeatherFromFile(){
         try {
 
-            InputStream is = new FileInputStream(getCacheDir() + "/" + "current_weather.json");
+            InputStream is = new FileInputStream(getCacheDir() + "/" + "weather.json");
             byte[] buffer = new byte[is.available()];
             is.read(buffer);
             is.close();

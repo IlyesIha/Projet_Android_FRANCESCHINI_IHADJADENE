@@ -23,6 +23,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 import org.json.JSONArray;
@@ -48,6 +49,9 @@ public class WeatherCityActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather_city);
 
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+
+
         recyclerView = findViewById(R.id.rv_current);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
@@ -56,9 +60,9 @@ public class WeatherCityActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(wa);
 
-        GetWeatherCurrentServices.startActionWeather(this);
+        GetWeatherCityServices.startActionWeather(this);
         IntentFilter intentFilter = new IntentFilter(WEATHER_UPDATE);
-        LocalBroadcastManager.getInstance(this).registerReceiver(new WeatherCityActivity.WeatherUpdate(), intentFilter);
+        LocalBroadcastManager.getInstance(this).registerReceiver(new WeatherUpdate(), intentFilter);
 
 
     }
@@ -139,7 +143,7 @@ public class WeatherCityActivity extends AppCompatActivity {
     public JSONArray getCurrentWeatherFromFile(){
         try {
 
-            InputStream is = new FileInputStream(getCacheDir() + "/" + "city_weather.json");
+            InputStream is = new FileInputStream(getCacheDir() + "/" + "weather.json");
             byte[] buffer = new byte[is.available()];
             is.read(buffer);
             is.close();

@@ -1,16 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="20dp"
+    android:background="@android:color/white">
 
     <ImageView
         android:id="@+id/rv_weather_image"
         android:layout_width="wrap_content"
+        android:src="@drawable/clear_day"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/rv_weather_element"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/rv_weather_element_temps_units"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
+            android:text="affiche la temperature"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/rv_weather_element_temps_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="105dp"
+            android:layout_centerHorizontal="true"
+            android:text="AFFICHE LE TEMPS"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/rv_weather_element_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:layout_centerHorizontal="true"
+            android:text="affiche la date"
+            />
+
+        <TextView
+            android:id="@+id/rv_weather_element_city"
+            android:text="Paris"
+            android:layout_marginTop="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"/>
+
+
 
 </RelativeLayout>

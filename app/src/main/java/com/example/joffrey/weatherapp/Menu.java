@@ -37,7 +37,7 @@ public class Menu extends AppCompatActivity {
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
 
-        TextView tv = findViewById(R.id.tv_autor);
+        //TextView tv = findViewById(R.id.tv_autor);
         Button btn_current  = findViewById(R.id.button_current);
         Button btn_city = findViewById(R.id.button_select_city);
 

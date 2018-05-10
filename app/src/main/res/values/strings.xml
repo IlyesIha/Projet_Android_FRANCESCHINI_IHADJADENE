@@ -11,6 +11,7 @@
     <string name="item_search">Find a city</string>
     <string name="toast_valide">You are at : </string>
     <string name="toast_error">Localisation not found</string>
-    <string name="notif_title">LOCALISATION EROR</string>
-    <string name="notif_text">You need to turn on localisation</string>
+    <string name="notif_title">LOCALISATION</string>
+    <string name="notif_text">You have been detected at : </string>
+    <string name="notif_city_text">You ask the weather for : </string>
 </resources>

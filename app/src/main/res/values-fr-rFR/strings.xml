@@ -4,7 +4,7 @@
     <string name="button_current">Localisation Actuelle</string>
     <string name="button_select_city">Sélectionner votre ville</string>
     <string name="tv_autor">Par Joffrey et Ilyes</string>
-    <string name="alert_message">Où voullez-vous connaitre la météo</string>
+    <string name="alert_message">Où voulez-vous connaitre la météo</string>
     <string name="alert_title">Sélectionner votre ville</string>
     <string name="alert_validate">Valider</string>
     <string name="alert_cancel">Retour</string>
@@ -12,6 +12,7 @@
     <string name="item_search">Rechercher une ville</string>
     <string name="toast_valide">Vous êtes à : </string>
     <string name="toast_error">Localisation non trouvée</string>
-    <string name="notif_title">ERREUR LOCALISATION</string>
-    <string name="notif_text">Vous devez activez la localisation pour cette application</string>
+    <string name="notif_title">LOCALISATION</string>
+    <string name="notif_text">Vous avez été detecté à : </string>
+    <string name="notif_city_text">Vous avez demandé la météo pour : </string>
 </resources>

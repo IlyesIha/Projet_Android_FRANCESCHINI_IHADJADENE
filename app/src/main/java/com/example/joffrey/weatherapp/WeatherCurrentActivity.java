@@ -80,8 +80,8 @@ public class WeatherCurrentActivity extends AppCompatActivity {
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
         mBuilder.setSmallIcon(android.R.drawable.ic_dialog_info);
-        mBuilder.setContentTitle("Localisation");
-        mBuilder.setContentText("Vous avez été detecté à " + myLocation.getCity());
+        mBuilder.setContentTitle(getString(R.string.notif_title));
+        mBuilder.setContentText(getString(R.string.notif_text) + myLocation.getCity());
         mBuilder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
@@ -106,11 +106,11 @@ public class WeatherCurrentActivity extends AppCompatActivity {
                         if(location != null){
                             myLocation.setLatitude(location.getLatitude());
                             myLocation.setLongitude(location.getLongitude());
-                            Toast.makeText(getApplicationContext(), "Vous êtes à : " + myLocation.getLatitude() + " " +  myLocation.getLongitude(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), getString(R.string.toast_valide) + myLocation.getLatitude() + " " +  myLocation.getLongitude(), Toast.LENGTH_LONG).show();
                             Intent i = new Intent(WeatherCurrentActivity.this, WeatherCurrentActivity.class);
                             startActivity(i);
                         } else {
-                            Toast.makeText(getApplicationContext(), R.string.toast_error,Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), getString(R.string.toast_error) ,Toast.LENGTH_LONG).show();
                         }
                     }
                 });

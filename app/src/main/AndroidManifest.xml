@@ -28,6 +28,15 @@
         <service
             android:name=".GetWeatherCityServices"
             android:exported="false"></service>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationID"
+            android:value="@string/facebook_app_id" />
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider365383570619077"
+            android:exported="true" />
     </application>
 
 </manifest>
